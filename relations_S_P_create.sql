@@ -9,16 +9,16 @@ BEGIN
 
 SELECT DISTINCT 
                 MODEL.[NAME] AS MODEL_NAME, 
-				SRC.[OBJT],
+	        SRC.[OBJT],
                 SRC.[NAME] AS SRC_NAME,
-				RLSH.[TRGT],
-		        TRG.[NAME] AS TRGT_NAME,
-				CLSS.[NAME] AS TRGT_CLSS,
-				TRG.[VRSN] 
+		RLSH.[TRGT],
+		TRG.[NAME] AS TRGT_NAME,
+		CLSS.[NAME] AS TRGT_CLSS,
+		TRG.[VRSN] 
 
 FROM  [Repo-db].[dbo].[PMOBJT] MODEL, [Repo-db].[dbo].[PMCLSS] M_CLSS,
       [Repo-db].[dbo].[PMOBJT] SRC,   [Repo-db].[dbo].[PMCLSS] CLSS,
-	  [Repo-db].[dbo].[PMRLSH] RLSH,  [Repo-db].[dbo].[PMOBJT] TRG
+      [Repo-db].[dbo].[PMRLSH] RLSH,  [Repo-db].[dbo].[PMOBJT] TRG
 
 
 WHERE SRC.NAME = @objname1 AND SRC.OBJT = RLSH.SRCE AND SRC.LVRS = 1
